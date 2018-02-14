@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>好爱臭馨</title>
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+
+		.heart{
+			position:relative;
+			width:1000px;
+			height:16px;
+			
+		}
+		.heart:before{
+			content:"";
+			position:absolute;
+			width:10px;
+			height:16px;
+			background:#df6659;
+			border-radius:10px 10px 0 0;
+			transform:rotate(45deg);
+			}
+			.heart:after{
+				content:"";
+				position:absolute;
+				left:-4px;
+				width:10px;
+				height:16px;
+				background:#df6659;
+				border-radius:10px 10px 0 0;
+				transform:rotate(-45deg);
+			}
+			}
+			.snowfall-flakes{
+				position:relative;
+			}
+			.snowfall-flakes:before,.snowfall-flakes:after{
+				content:"";
+				position:absolute;
+				width:10px;
+				height:16px;
+				background:#df6659;
+				border-radius:10px 10px 0 0;
+				transform:rotate(45deg);
+			}
+			.snowfall-flakes:after{
+				left:-4px;
+				transform:rotate(-45deg);
+			}
+		</style>
+
+</head>
+<body>
+		<div id="site">
+			<div id="videoBox" class="box">
+				<video width="400" controls  autoplay>
+					<source src="video/1.mp4" type="video/mp4"> 
+				</video>
+			</div>
+
+			<div id="bloc">
+
+				<div id="commentsBox" class="box">
+						<div id="videoBox" class="box"><video  controls><source src="video/23.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/19.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/4.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/17.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/6.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/15.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/8.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/14.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/10.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/16.mp4" type="video/mp4"></div>
+				</div>
+				
+				<div id="suggBox" class="box">
+						<div id="videoBox" class="box"><video  controls><source src="video/9.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/24.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/3.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/6.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/7.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/12.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/20.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/21.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/22.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/19.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/25.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/26.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/11.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/18.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/13.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/5.mp4" type="video/mp4"></div>
+						<div id="videoBox" class="box"><video  controls><source src="video/2.mp4" type="video/mp4"></div>
+				</div>
+			</div>	
+		</div>
+	<div class="heart"></div>
+
+	<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="js/snowfall.jquery.js"></script>
+	<script type="text/javascript">
+		$(document).snowfall({
+			flakeCount:100
+		});
+	</script>
+	<script type="text/javascript">
+		var ha = ( $('#videoBox').offset().top + $('#videoBox').height() );
+
+		$(window).scroll(function(){  
+
+			if ( $(window).scrollTop() > ha + 500 ) { 
+		    $('#videoBox').css('bottom','0'); 
+			} else if ( $(window).scrollTop() < ha + 200) {  
+		    $('#videoBox').removeClass('out').addClass('in');     
+			} else {       
+		  	$('#videoBox').removeClass('in').addClass('out');   
+		    $('#videoBox').css('bottom','-500px');             
+		  };  
+
+		});	
+	</script>
+</body>
+</html>

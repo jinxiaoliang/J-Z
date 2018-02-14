@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Keywords" content="臭馨和阿金" >
+	<meta name="Description" content="阿金和臭馨" >
+	<title>老婆我爱你</title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	html{
+		height:100%	
+	}
+
+	body{
+		height:100%;
+		background:url("images/0.jpg") no-repeat;
+		background-size:100% 100%;
+		overflow:hidden
+	}
+	.main{background:url("images/0.jpg") no-repeat;}
+		.heart{
+			position:relative;
+			width:1000px;
+			height:16px;
+			
+		}
+		.heart:before{
+			content:"";
+			position:absolute;
+			width:10px;
+			height:16px;
+			background:red;
+			border-radius:10px 10px 0 0;
+			transform:rotate(45deg);
+			}
+			.heart:after{
+				content:"";
+				position:absolute;
+				left:-4px;
+				width:10px;
+				height:16px;
+				background:red;
+				border-radius:10px 10px 0 0;
+				transform:rotate(-45deg);
+			}
+			}
+			.snowfall-flakes{
+				position:relative;
+			}
+			.snowfall-flakes:before,.snowfall-flakes:after{
+				content:"";
+				position:absolute;
+				width:10px;
+				height:16px;
+				background:red;
+				border-radius:10px 10px 0 0;
+				transform:rotate(45deg);
+			}
+			.snowfall-flakes:after{
+				left:-4px;
+				transform:rotate(-45deg);
+			}
+	</style>
+</head>
+<body>
+<audio autoplay="autoplay" style="width:0;height:0" src="music/萧忆情-告白气球.mp3" loop="loop"></audio><!--音频播放,低版本IE中没有效果-->
+
+	<div class="heart"></div>
+	<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="js/snowfall.jquery.js"></script>
+	<script type="text/javascript">
+		$(document).snowfall({
+			flakeCount:100
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<!--jQuery-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--jQuery动画暂停插件-->
+<script type="text/javascript" src="js/jquery.pause.min.js"></script>
+<!--滚动效果js-->
+<script type="text/javascript">
+$(function () {
+    var scrtime;
+
+    var $ul = $("#con ul");
+    var liFirstHeight = $ul.find("li:first").height();//第一个li的高度
+    $ul.css({ top: "-" + liFirstHeight - 20 + "px" });//利用css的top属性将第一个li隐藏在列表上方	 因li的上下padding:10px所以要-20
+
+    $("#con").hover(function () {
+        $ul.pause();//暂停动画
+        clearInterval(scrtime);
+    }, function () {
+        $ul.resume();//恢复播放动画	
+        scrtime = setInterval(function scrolllist() {
+            //动画形式展现第一个li
+            $ul.animate({ top: 0 + "px" }, 1500, function () {
+                //动画完成时
+                $ul.find("li:last").prependTo($ul);//将ul的最后一个剪切li插入为ul的第一个li
+                liFirstHeight = $ul.find("li:first").height();//刚插入的li的高度
+                $ul.css({ top: "-" + liFirstHeight - 20 + "px" });//利用css的top属性将刚插入的li隐藏在列表上方  因li的上下padding:10px所以要-20					
+            });
+        }, 3300);
+
+    }).trigger("mouseleave");//通过trigger("mouseleave")函数来触发hover事件的第2个函数
+
+});
+</script>
+
+</head>
+<body>
+<audio autoplay="autoplay" style="width:0px;height:0px" src="music/房东的猫 - 云烟成雨.mp3" loop="loop"></audio>
+<div id="box_title">臭馨与阿金的语录文库</div>
+<div id="con">
+	<div class="bottomcover" style="z-index:2;"></div>
+	<ul>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：你不喝嘛，喝了就没人送我回去了/ 不准喝，反正不准喝，哼，喝了就不和你看电影了/ 必须要威胁威胁你了。</br>
+				<a href="#">阿金</a>：我要不要说（邪笑邪笑）</br>
+				<div class="twit_item_time">2018年1月5日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：我没谈过恋爱，所以说你这样子还是很有用的让我咳有点在意了，不过要是你中间喜欢上了别人也希望能直接告诉我，我可以溜了的</br>
+				<a href="#">阿金</a>：新年快乐/ 很多想说的，但又说不了，哈哈😄</br>
+				ps:我才不会溜，你休想甩掉我
+				<div class="twit_item_time">2018年1月1日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：老头子，这辈子也是你</br>
+				<a href="#">阿金</a>：老婆子，下辈子还是你
+				<div class="twit_item_time">未完待续</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：老头子又在翻相册呀，多怀恋我们以前的样子，也很幸运，这一路走来都有你的陪伴呢。也多希望我们的女儿也能遇见一个你这样的好男人呢</br>
+				<a href="#">阿金</a>：嗯嗯，当时我一开始也是垂涎你的美色呢，然后再把你抢到手的南北。嘿嘿嘿，你老公我还是有一套的呢。你看这是我们刚谈恋爱的照片呢，你看，好傻的样子，还有这一张，我们大学去南京的照片，也好傻，哈哈哈。还有这些，杭州，大理，爱情海....每张都看着好傻你。多幸运啊，能遇见你，还能陪我度过余生。嘿嘿嘿，老婆子，你还是没有变呢，好傻
+				<div class="twit_item_time">40年后</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：我想提前回校了，学习等你见你（听到这句的时候其实好感动好感动）/ 阿金，我想给你打电话，我想你了/ 我胆子很大的 哈哈哈哈 哇咔咔咔 muamua/ 逗你呢 只要你/ 可我还是喜欢你 看看看 多么不容易/ 嘿嘿嘿你在别人那是啥样我不知道 你在我这里嘛 就是我喜欢的样子 </br>
+				<a href="#">阿金</a>： 莫虚 莫虚撒/ 你就是超级爱我，我不管/ 这张特别喜欢怎么办 送给小阿金/ 不得了 是爱的样子 是老公的样子 是未来孩子老爸的样子/ 我给你的备注是十三，因为朋友多一点恋人多一点爱人多一点家人多一点，所以十三的名字叫偏爱。我爱你臭馨，晚安♥
+
+				<div class="twit_item_time">2018年2月13日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：当我和别人提起你时，我的眼睛里都是笑，这是不是我喜欢你的表现。当我和别人提起的只有你的时候，这是不是我爱上你了</br>
+				<a href="#">阿金</a>：天也欢喜，地也欢喜，人也欢喜，
+欢喜我遇到了你，你也遇到了我.
+当时是你心里有了一个我，
+我心里也有了一个你，
+从今后是朝朝暮暮在一起.
+地久天长，同心比翼，相敬相爱相扶持.
+偶然发脾气，也要规劝勉励.
+在工作中学习，在服务上努力，追求真理，
+抗战到底.
+为着大我忘却小已，直等到最后胜利.
+再生一两个孩子，一半儿像我，一半儿像你.
+我爱你臭馨
+我老婆呢 
+				<div class="twit_item_time">2018年2月12日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：我希望以后每个我喜欢你的日子你都喜欢我，每个你不喜欢的日子我都怀恋你（哼😕，我才不要不喜欢你）</br>
+				<a href="#">阿金</a>：虽然有些迟，但我还是想说，想给你的不仅是一场仪式和一枚钻戒，更想与你柴米油盐细水长流。我们结婚吧。我的床不大不小，睡你刚刚好。我爱你臭馨，晚安mua
+				<div class="twit_item_time">2018年2月11日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：越来越不会说情话了，可是思念越来越浓了，这或许是情话已经没办法形容我对你的思念了吧（可是我还是会说情话呢）/ 撒拉嘿哟/ 我感觉我的胃口被你养大了（我可是感觉超级幸福呢）/ ich liebe dich 我爱你/ 干嘛 老头子 我也是 好想你/ 圆圆的，眼睛小小的，笑起来很好看的 😔我的阿金没了哇呜呜</br>
+				<a href="#">阿金</a>：我想要的不只是想你，你的身你的心，我都想要😄/ 你胸大，屁股大，感觉萌萌哒，其实可以嫁给我呀/ 我爱你/ 想你恋你爱你我爱你我想你我恋你我喜欢你我要照顾你/ 那是，可是你老公。/ 我喜欢你没穿衣服的样子。
+				<div class="twit_item_time">2018年2月10日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：谁告诉你我是感动，我是心动好不好，感动的我就是我对我说的高中同桌那样不不，应该叫感恩。感动我还是有的/ 晚安♥我也好想好想现在就拥有你拥有一个我们的家，所以我现在就叫你老公了。但是我希望我的未来的每个时间段都有你，希望那个时候我们还能记住对彼此的诺言</br>
+				<a href="#">阿金</a>：我不想感动谁，我只想有个不会放弃我的人，臭馨，我爱你，我不希望因为感动才爱，而是真的相爱/我最爱的老婆，此生能与你相拥何其幸运，晚安老婆
+
+				<div class="twit_item_time">2018年2月8日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：嘻嘻嘻😄/打死你，臭流氓（超级喜欢你说这句话的样子）/ 我想说，嘿嘿嘿爱你阿金/ 阿金想你阿金你在干啥呢/ 有些时候你很成熟，例如你很尊重我的决定，也不会吃醋，偶尔也想看看你孩子气的一面呀/嘿嘿嘿，你都喜欢，无论是成熟的时候还是幼稚的时候（我也是，老婆我爱你）/ 我喝我头晕，你喝我心疼/ 乖，我的小老公。嘿嘿嘿，我的乖老公，可以不嘛/ 晚安 我爱你mua</br>
+				<a href="#">阿金</a>： 我想和喜欢的人结婚，是谁呢，咦，竟然是你也，世间虽有千般好，唯你最珍贵/我爱你，mua，要的遵命，老婆/ 我不允许你不喜欢我/  嘿嘿我的好老婆/ 早点睡吧，老婆我爱你muamuamuamua晚安
+				<div class="twit_item_time">2018年2月6日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：昨天我做了个噩梦，我梦见你吼我/ 我不会做饭，做家务，洗衣服，你说你会，那好吧我等你来娶我，最近你说的不再是那种情诗，而是朴实的小情话，嘿嘿嘿很真诚很喜欢（难道我说情诗的时候不真诚你不喜欢吗 哼），阿金今天喝酒了呢，希望明天起床不会头疼🐷/ 睡吧睡吧 好好休息 mua</br>
+				<a href="#">阿金</a>： 不会不会的 老婆我不会的不会不会的，摸摸，老婆我真的不会吼你的，真的不会的老婆/ 最美的情话莫过于我嫁你你娶我/ 有我喜欢你，有老公爱你呢/ 我爸又骂我了晚安老婆/ 我喜欢臭馨,比昨天多,但不如明天,我爱你臭馨/ 她整天闹啊闹,他整天笑啊笑,她崇拜他像个英雄,他宠爱她像个孩子,我爱你臭馨晚安（哼，还跟我争）
+				<div class="twit_item_time">2018年2月5日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：阿金，我爱你。好想你，时间过的好快，可是又觉得怎么还没有到开学了，不过开学以后估计就老忙了，真纠结，不过，我会等着你，无论是1小时，还是一天，还是一年，又或许是一辈子</br>
+				<a href="#">阿金</a>： 我打算爱你很久很久呢，没有想要放弃的念头呢，我爱你臭馨 晚安/ 抓住我别放手，好吗。只想宠你爱你呵护你，伴我一生，换一世白头</br>
+				ps:都是抄的臭馨的呢😄
+				<div class="twit_item_time">2018年2月2日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：不好，痛/对呀，被你骗了，哼，被你骗到手了/ 我想吃东西了媳妇（媳妇最重要）/ 我想了想觉得还想看看我们的孩子能长什么样/ 过分 / 我存过你的照片，你喜欢的歌我也有去听，你看过的电影我也偷偷看过，你感兴趣的东西我也尝试感兴趣，其实我远比表面更喜欢你/ 很喜欢你，很爱你，我的喜欢好似酒，越久越醇</br>
+				<a href="#">阿金</a>：我们自己生一个好不好，那去领养一个/ 零食在我眼里只占了0.1%，可你却占了一大半/ 我不仅想和你视频，还想亲你抱你牵你睡你.../ 以后我们也去领养一对女儿吧/ 只对你耍流氓欸/ 我就喜欢你不穿的样子/ 一直很幸福，有了你之后/ 喜欢你还是不喜欢你，这道题我这辈子都不会做，因为我爱你，我不想只爱你，但是我会做怎么爱你这道题，我爱你 臭馨，晚安
+				<div class="twit_item_time">2018年2月1日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：天，那么晚了，我要快点收拾出门了，要被我妈说了，出门了出门了😳我说我乱糟糟的出来。我也想你，好想好想。/ 我当时也好想你在我身边/ 看来我可以看见胖胖的你/ 那现在亲不到，抱不到，牵不到，我开学见到你时不晓得好丑/ 我喜欢你，因我眼中的你是最好的；我爱你，因我从你眼中能看见一个美好的世界；我要你，只因我希望自己能花一生读懂你，陪伴你。</br>
+				<a href="#">阿金</a>：好想在你身边/ 亲嘴能加速血液循环，就是家属新陈代谢撒，皮肤就会变得水嫩嫩的咯/ 天生的也可以弄好的，就是我没有照顾好你。/ 喜欢是清浅小溪，欣赏你的光芒；爱是深沉大海，包容你的一切，臭馨，我爱你♥/有点饿，有点想你，想点开外卖软件，点个你 ​​​晚安，我的臭馨</br>
+				ps：这一天我们发了好多语音，没办法就是沉迷于你的声音无法自拔
+				<div class="twit_item_time">2018年1月31日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：哈哈哈，瞧你那傻样，迷上你了，老婆抱/ 你把我的指甲刀拿走了，我都没有剪指甲的呢/ 现在去吃饭，吃完饭去外婆家写代码（究竟写没写呢😏）/  你是第一个我见过说逛街还可以的男的（那是因为你接触的好男人太少了）/ 我能看见许多不好的，可是那只是能力不够，我不够强，帮不了他们或者自己。二那些美好的，有好的朋友，有虽然很管我却对我很好的家人，还能遇见你，嘿嘿你，真是我觉得我目前为止的第二最大幸运。/ 晚安</br>
+				<a href="#">阿金</a>：亲爱的，我可能会喜欢另一个女孩子，他会给你打声招呼，他会叫你妈妈，晚安臭馨，我爱你/ 可能吃完就两点了，你在玩一会就三点了，你在打一下盹今天就没了/我不会嫌弃，巴不得你长胖/ 晚安，臭馨
+				<div class="twit_item_time">2018年1月30日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：我还是很喜欢你，像风吹过了草，一撩倾心，想你阿金/ (前面好多好多好想）致我未来的老公（羞）/ 你晚起，你是猪猪，😄（没想到老婆真的发了，虽然只维持了一天）/ 抱抱不够，我要亲亲你/ 我不舔也不让你舔/ 就算真的有啤酒肚，我看见的时候应该已经离不开你了/ 胖了怕你胖了自己心心念念后悔，瘦了我心疼/ 好想蹭蹭他的脖子/ 好想咬咬他的耳朵/ 我好想牵牵他的大手/ 好想搂住你的腰/ 好想摸摸你的小肚皮/ 好想亲亲你的小嘴/ 好想舔一小下/ 好想好想说我爱你</br>
+				<a href="#">阿金</a>：因为我预料多年后会与你相遇，想和你有共同语言，就去看牙医了/ 我错咯老婆/ 我还是喜欢你，像日光洒满大地，温柔惬意，♥爱你臭馨/ 我想和你一起散步一起吃饭一起看电影一起看书一起旅游一起过完余生，仅仅几天不见还是特别想你，寒假要变胖胖哦/ 我爱你，你给我的每一次都是新鲜，我对你的依恋越加明显，就在每次亲吻的瞬间，我就再也无法离开你的身边/ 我爱你的时间流速是很快的，不然怎么从上辈子爱到了现在，不然怎么爱到下辈子</br>
+				ps:今天臭馨说了好多好多好想，我心里其实也有好多好多好想，也都是想和你一起做的。今天也一起视频了呢，多久没有见臭馨，还是多想念的
+				<div class="twit_item_time">2018年1月29日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：或许这就是想念，一遍遍听你的声音，一遍遍看你的相片，若难以把你放在身边，可不可以把你放进心里（可以，非常愿意）/ 惨了，我也是这么想的诶/  这不公平，就我说，我也想听你的声音呀 哈哈哈 开心/ 祝你好运，下学期还能见到你/ 不存在的😜/ 你欺负我就是在欺负我哼过分/ 找到了我的暖手哼不要你了/ 咦，你好。。</br>
+				<a href="#">阿金</a>：你以为我是话唠 其实只是特别喜欢你。想把你占为己有，又怕你想要自由。/ 如果我没有刀，就不能保护你，如果我有刀,就不能拥抱你/ 我想听你起床气的声音 你这是虚弱😄 你这是在气我 你声音好好听/ 说我爱你/ 想谈那种特别啰嗦特别甜的恋爱，打卡一般，睡觉前不管多晚也给你发个消息说一句「我睡啦」，如果早上先醒就发「还没起的是猪」/ 我都舔过了，会不会中毒/ 洗澡澡，早点睡明天还要早起😄。安咯
+				<div class="twit_item_time">2018年1月28日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="http://www.htmleaf.com/"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：我最喜欢的日常就是面对面看着你，是我最安静，最轻松最幸福的时刻。愿你好梦，晚安，阿金/  过分，打我，拿你没办法小拳拳打我/ 看见你，就想笑/ 除了肚子和胸，你哪都能胖/ 阿金抱抱，摸摸，亲亲/ 嗯，你就在那，静静的呆着/ 关于阿金，今天有点不乖，说好的只给我看你的性感“红唇”呢，虽然我看着好好笑，不过还是好心疼的，明明以前我从没有这样子过/ 晚安，来我梦里，我跟你说😏</br>
+				<a href="#">阿金</a>：你自拍多好看呀/ 明明是抚摸，你脑瓜子咋这么暴力诶，真的骗你是小狗/ 我永远都不要失去你/ 不委屈啊，喜欢你是最幸福的事情了/ 两个人在一起能做最多的事就是陪伴 我忙我的 你忙你的 有两三个小时的晚间黄金时间 我们都是独享的 但知道一个空间里有另一个人坐在哪儿 你就会感到很踏实 这就是爱情 最常态的爱情/ 今晚没有情话，你来我梦里，我亲口对你说吧 ​​​，晚安🌙臭馨
+				<div class="twit_item_time">2018年1月27日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：想哭哭，怎么办，因为我不想离开你😙/ 😕你这个部长，太过分了/ 阿金，我想你，唔，晚安/ 本来想多走一会儿多抱你黏你一会儿的😔/ 想一直看手机/不错过你的消息；想继续写信回应你的感情；一不小心又想起平时你的傻笑；嘿嘿，阿金你要好好的哦。</br>
+				<a href="#">阿金</a>：是的呢，我还是很幸运的呢/ 我的字还可以吧😄/ 嗯嗯，睡吧，媳妇，嘿嘿/ 你对我都不能多次机会吗/ 我又错过了占便宜的机会了/ 我爱你，晚安，记得想我哦/超喜欢臭馨了。
+				<div class="twit_item_time">2018年1月26日</div>
+			</div>
+		</li>	
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：emmm，我觉得你以后还是不要亲我了（我才不要）/ 晚安，阿金，我想你了/ 拿完伞，我就回被窝了，哈哈哈/ 你该不会回去刮胡子了吧/请不要弄坏我的东西/ 想你，阿金，我好像知道那天亲口对你说喜欢的时候的感觉，如何呀，没办法，一直磨蹭，只有在宿舍门口前说了，啊好羞</br>
+				<a href="#">阿金</a>：愿你三冬暖，愿你春不寒，愿你天黑有灯，下雨有伞，愿你路上有良人相伴，愿你无疾无忧，百岁安生不离笑
+				<div class="twit_item_time">2018年1月25日</div>
+			</div>
+		</li>
+		<li>
+			<div class="div_left"><a href="#"><img src="images/head.jpg" title="Jarvis_风"></a></div>
+			<div class="div_right">
+				<a href="#">臭馨</a>：woyuanyi/ 我属于呆着越久越喜欢的类型/ 就是呆在身边越久越喜欢他/ 晚安，小眼睛，短睫毛，是你最美的记号，阿金，晚安/ 你让我好放松，除了一直盯着我的时候。</br>
+				<a href="#">阿金</a>：万水千山 你愿意陪我一起看吗</br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp万箭穿心终不悔 相识一笑轻王权</br> 懂了/ 我反正一路走到黑吧/ 臭馨，我爱你也</br>
+				<div class="twit_item_time">2018年1月18日</div>
+		</li>
+	</ul>
+</div>
+    
+   
+</body>
+</html>
